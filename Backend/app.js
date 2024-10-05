@@ -11,10 +11,12 @@ import cors from "cors";
 import {notFound, errorHandler } from "./middlewares/error.middleware.js";
 
 
+// module.exports = app;
+// const express = require('express');
 
 
-const app = express();
-export default app;
+// const app = express();
+// export default app;
 
 // CORS MIDDLEWARE
 app.use(cors());
@@ -38,3 +40,5 @@ app.use("/api/v1/banners", bannerRoute);
 // ERROR MIDDLEWARES
 app.use(notFound);
 app.use(errorHandler);
+
+export default app;
