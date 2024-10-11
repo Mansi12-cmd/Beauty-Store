@@ -11,12 +11,12 @@ import cors from "cors";
 import {notFound, errorHandler } from "./middlewares/error.middleware.js";
 
 
-// module.exports = app;
+// // module.exports = app;
 // const express = require('express');
 
 
-// const app = express();
-// export default app;
+const app = express();
+export default app;
 
 // CORS MIDDLEWARE
 app.use(cors());
