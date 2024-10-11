@@ -6,5 +6,5 @@ import dotenv from "dotenv";
 //   SERVER
 const PORT = process.env.PORT;
  app.listen(8000, () =>{
-  console.log(`Server is running on port ${PORT}`)
+  console.log(`Server is running on port ${8000}`)
  })
