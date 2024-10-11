@@ -6,21 +6,27 @@ import sendDeliveredOrder from "./Emailservice/sendDeliveredOrder.js";
 import sendPromotionEmail from "./Emailservice/sendPromotionemail.js";
 import sendWelcomeEmail from "./Emailservice/sendWelcomeEmail.js";
 import sendPendingOrderEmail from "./Emailservice/sendPendingOrderEmail.js";
+import sendDeliveredOrderEmail from "./EmailServices/sendDeliveredOrderEmail.js";
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 
-const run = () => {
-  cron.schedule("* * * * * *", async () => {
+const services = () => {
+  cron.schedule("* * * * * *", () => {
     sendDeliveredOrder();
     sendPromotionEmail();
-    //sendWelcomeEmail();
-    //sendPendingOrderEmail();
+    sendDeliveredOrderEmail();
+  });
+};
+const promotion = () => {
+  cron.schedule("* * * * * *",  () => {
+    
   });
 };
 
-run();
+services();
+promotion();
 
 app.listen(PORT, () => {
   console.log(`Backgroundservice is running on port ${PORT}`);
